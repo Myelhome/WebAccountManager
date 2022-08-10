@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+</head>
+<body>
+
+<div>
+    id: <b th:text="${person.getId()}"><font size="4" color="gray">VALUE</font></b>
+    <br>
+    name: <b th:text="${person.getName()}"><font size="5">VALUE</font></b>
+    <br>
+    <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+    <br/>
+    <br>
+    <form th:method="DELETE" th:action="@{/people/{id}/(id=${person.getId()})}">
+        <input type="submit" value="Delete">
+    </form>
+
+    <br/>
+    Go back to all <a href="/people">users</a>
+</div>
+
+</body>
+</html>
